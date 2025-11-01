@@ -2,6 +2,9 @@ from fastapi import FastAPI
 import os
 import logging
 from typing import Dict, Any
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -61,4 +64,5 @@ async def test_database() -> Dict[str, Any]:
 
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(app, host="0.0.0.0", port=8000)
